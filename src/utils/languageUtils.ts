@@ -9,6 +9,7 @@ export class LanguageUtils {
      */
     private static readonly LANGUAGE_NAMES: Record<string, string> = {
         'default': 'Default',
+        'fa': 'Farsi',
         'ar': 'Arabic',
         'cs': 'Czech',
         'da': 'Danish',

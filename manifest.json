@@ -1,12 +1,11 @@
 {
-  "id": "ai-tagger-universe",
-  "name": "AI Tagger Universe",
-  "version": "1.0.15",
+  "id": "mirobsai-tagger",
+  "name": "MirobsAI Tagger",
+  "version": "0.0.1",
   "minAppVersion": "1.4.0",
-  "description": "Automatically analyze note content and add relevant tags using AI (with Chinese interface support)",
-  "author": "Nie Hu",
-  "authorUrl": "https://github.com/niehu2018",
+  "description": "Automatically analyze note content and add relevant tags using AI (with FA language support)",
+  "author": "Mirza Kazem",
+  "authorUrl": "https://github.com/mirzakazem5",
   "isDesktopOnly": false,
-  "fundingUrl": "https://buymeacoffee.com/niehu2015o",
-  "repo": "niehu2018/obsidian-ai-tagger-universe"
+  "repo": "mirzakazem5/MirobsAI-Tagger"
 }
