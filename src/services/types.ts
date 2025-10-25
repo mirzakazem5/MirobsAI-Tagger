@@ -4,6 +4,8 @@ export const MAX_CONCURRENT_REQUESTS = 3;
 
 export type LanguageCode = 
     | "default"
+    | "multilingual"
+    | "fa"
     | "en"
     | "ar"
     | "cs"

@@ -5,6 +5,8 @@ import { LanguageCode } from './types';
  */
 export const languageNames: Record<LanguageCode, string> = {
     'default': 'Default',
+    'multilingual': 'Multilingual',
+    'fa': 'Farsi',
     'ar': 'Arabic',
     'cs': 'Czech',
     'da': 'Danish',

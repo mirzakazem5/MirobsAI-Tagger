@@ -36,7 +36,7 @@ export function buildTagPrompt(
     let langInstructions = '';
 
     // Prepare language instructions if needed
-    if (language && language !== 'default') {
+    if (language && language !== 'default' && language !== 'multilingual') {
         const languageName = LanguageUtils.getLanguageDisplayName(language);
 
         switch (mode) {
@@ -52,6 +52,33 @@ When generating new tags (not selecting from predefined ones), they must be in $
 Regardless of what language the content is in, all tags must be in ${languageName} only.
 First understand the content, then if needed translate concepts to ${languageName}, then generate tags in ${languageName}.
 
+`;
+                break;
+
+            default:
+                langInstructions = '';
+        }
+    }
+
+    if (language === 'multilingual') {
+        switch (mode) {
+            case TaggingMode.Hybrid:
+                langInstructions = `IMPORTANT:
+- When generating new tags (not selecting from predefined ones), output them in multiple relevant languages present in the document.
+- If the content includes multiple languages (e.g., Persian and English or Arabic), output tags in both languages, even if they are translations of each other (do NOT deduplicate across languages).
+- Always include tags in the topic's standard scientific/disciplinary language when applicable (e.g., English for many technical fields; Latin for biological taxonomy; Arabic for Hadith text and Quran verses), even if that language is not the primary language of the text.
+- If the content is primarily in one language, include that language plus the standard scientific language (when applicable).
+- If the content is mixed-language, include all relevant languages plus the standard scientific language as needed.
+`;
+                break;
+
+            case TaggingMode.GenerateNew:
+                langInstructions = `IMPORTANT:
+- Generate tags in the most appropriate language(s) based on the document content.
+- If the content includes multiple languages, output tags in each of those languages, even when they are semantic equivalents (do NOT deduplicate translations).
+- Always include tags in the topic's standard scientific/disciplinary language when applicable (e.g., English for many technical fields; Latin for biological taxonomy; Arabic for Hadith text and Quran verses), even if the text is in a different language.
+- If the content is primarily in one language, include that language plus the standard scientific language (when applicable).
+- If the content is mixed-language, include all relevant languages plus the standard scientific language as needed.
 `;
                 break;
 

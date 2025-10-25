@@ -49,7 +49,7 @@ Generate tags that are:
 
 Prefer technical terms and domain-specific vocabulary when appropriate.`,
     excludedFolders: [],
-    language: 'default',
+    language: 'multilingual',
     interfaceLanguage: DEFAULT_LANGUAGE,
     predefinedTagsPath: '',
     tagSourceType: 'vault',
